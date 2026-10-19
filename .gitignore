@@ -9,3 +9,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# pushed separately: needs GitHub App "workflow" permission
+.github/
