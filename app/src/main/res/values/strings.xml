@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TYPE X Keyboard</string>
+    <string name="settings_title">TYPE X Settings</string>
+    <string name="subtype_en">English</string>
+    <string name="subtype_ur">Urdu</string>
+    <string name="tagline">Tell Type X what to do. Type X gets it done.</string>
+</resources>

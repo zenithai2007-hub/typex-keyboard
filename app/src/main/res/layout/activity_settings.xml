@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/typex_bg"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keypad theme"
+            android:textColor="@color/typex_text"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rb_theme_auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Auto — per-app keypad (WhatsApp, Instagram…)"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_theme_typex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Always TYPE X purple/orange"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_theme_dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Neutral dark"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="AI default tone"
+            android:textColor="@color/typex_text"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_tone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rb_tone_pro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Professional"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_tone_friendly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Friendly"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_tone_simple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Simple"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="AI default language"
+            android:textColor="@color/typex_text"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_lang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/rb_lang_follow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Follow keyboard language"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_lang_en"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_lang_roman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Roman Urdu"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+
+            <RadioButton
+                android:id="@+id/rb_lang_ur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Urdu"
+                android:textColor="@color/typex_text"
+                android:buttonTint="@color/typex_orange" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="About"
+            android:textColor="@color/typex_text"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="TYPE X Keyboard 1.0\nAI typing assistant that works in every app.\n100% on-device — your keystrokes never leave your phone."
+            android:textColor="@color/typex_text_secondary"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

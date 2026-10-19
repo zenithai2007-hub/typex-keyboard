@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/typex_bg"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="72dp"
+            android:src="@drawable/typex_logo"
+            android:contentDescription="TYPE X logo"
+            android:background="@android:color/white"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/tagline"
+            android:textColor="@color/typex_text_secondary"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_step1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="@color/typex_card"
+            app:cardCornerRadius="16dp"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/step1_status"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:text="1"
+                        android:textColor="@color/typex_text"
+                        android:background="@drawable/status_circle" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="Enable TYPE X"
+                        android:textColor="@color/typex_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Turn on TYPE X in your system keyboard settings."
+                    android:textColor="@color/typex_text_secondary"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_enable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="OPEN KEYBOARD SETTINGS"
+                    android:backgroundTint="@color/typex_purple" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/typex_card"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/step2_status"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:text="2"
+                        android:textColor="@color/typex_text"
+                        android:background="@drawable/status_circle" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="Switch to TYPE X"
+                        android:textColor="@color/typex_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Choose TYPE X as your active keyboard."
+                    android:textColor="@color/typex_text_secondary"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="SWITCH KEYBOARD"
+                    android:backgroundTint="@color/typex_purple" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btn_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="TYPE X SETTINGS"
+            android:backgroundTint="@color/typex_orange" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Version 1.0 — works 100% offline"
+            android:textColor="@color/typex_text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

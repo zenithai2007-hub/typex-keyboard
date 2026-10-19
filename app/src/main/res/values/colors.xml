@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="typex_bg">#0B0714</color>
+    <color name="typex_deep">#160B2E</color>
+    <color name="typex_purple">#7C3AED</color>
+    <color name="typex_purple_bright">#A855F7</color>
+    <color name="typex_orange">#FF7A18</color>
+    <color name="typex_orange_bright">#FF9F43</color>
+    <color name="typex_text">#FFFFFF</color>
+    <color name="typex_text_secondary">#A8A0B8</color>
+    <color name="typex_card">#1E1433</color>
+</resources>
