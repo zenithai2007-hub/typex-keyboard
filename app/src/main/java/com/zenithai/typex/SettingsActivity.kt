@@ -1,16 +1,15 @@
 package com.zenithai.typex
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.RadioGroup
-import androidx.appcompat.app.AppCompatActivity
 
 /** TYPE X settings: keypad theme, AI tone, AI language, about. */
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val rgTheme = findViewById<RadioGroup>(R.id.rg_theme)
         val rgTone = findViewById<RadioGroup>(R.id.rg_tone)
@@ -61,10 +60,5 @@ class SettingsActivity : AppCompatActivity() {
                 }
             )
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        return true
     }
 }

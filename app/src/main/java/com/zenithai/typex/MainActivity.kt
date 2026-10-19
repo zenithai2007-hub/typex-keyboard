@@ -1,5 +1,6 @@
 package com.zenithai.typex
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -7,14 +8,12 @@ import android.provider.Settings
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
 /**
  * Setup wizard: 2 steps — enable TYPE X in system settings,
  * then switch to it. Status is detected live on every resume.
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     private lateinit var step1Status: TextView
     private lateinit var step2Status: TextView
@@ -59,12 +58,12 @@ class MainActivity : AppCompatActivity() {
     private fun markStep(view: TextView, done: Boolean) {
         if (done) {
             view.text = "✓"
-            view.background = ContextCompat.getDrawable(this, R.drawable.status_circle_done)
-            view.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+            view.background = getDrawable(R.drawable.status_circle_done)
+            view.setTextColor(getColor(android.R.color.white))
         } else {
             view.text = if (view.id == R.id.step1_status) "1" else "2"
-            view.background = ContextCompat.getDrawable(this, R.drawable.status_circle)
-            view.setTextColor(ContextCompat.getColor(this, R.color.typex_text))
+            view.background = getDrawable(R.drawable.status_circle)
+            view.setTextColor(getColor(R.color.typex_text))
         }
     }
 }

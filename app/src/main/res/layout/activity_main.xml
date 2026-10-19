@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/typex_bg"
@@ -29,13 +28,12 @@
             android:textSize="14sp"
             android:gravity="center" />
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:id="@+id/card_step1"
+            android:background="@drawable/card_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            app:cardBackgroundColor="@color/typex_card"
-            app:cardCornerRadius="16dp"
             xmlns:app="http://schemas.android.com/apk/res-auto">
 
             <LinearLayout
@@ -87,14 +85,13 @@
                     android:text="OPEN KEYBOARD SETTINGS"
                     android:backgroundTint="@color/typex_purple" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/typex_card"
-            app:cardCornerRadius="16dp">
+            android:background="@drawable/card_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -145,7 +142,7 @@
                     android:text="SWITCH KEYBOARD"
                     android:backgroundTint="@color/typex_purple" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_settings"

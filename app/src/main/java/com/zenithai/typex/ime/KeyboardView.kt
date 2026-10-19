@@ -15,7 +15,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.PopupWindow
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import kotlin.math.min
 
 /**
@@ -147,7 +146,7 @@ class KeyboardView @JvmOverloads constructor(
 
     private fun iconFor(res: Int, color: Int): Bitmap {
         return iconCache.getOrPut(res * 31 + color) {
-            val d: Drawable = ContextCompat.getDrawable(context, res)!!.mutate()
+            val d: Drawable = context.getDrawable(res)!!.mutate()
             d.setTint(color)
             val size = dp(24f).toInt()
             val bmp = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
@@ -242,7 +241,7 @@ class KeyboardView @JvmOverloads constructor(
                 val hit = findKey(event.x, event.y)
                 val key = hit?.first
                 if (key != pressedKey) {
-                    cancelLongPress()
+                    cancelKeyLongPress()
                     pressedKey = key
                     if (key != null && isPreviewable(key) && hit != null) showPreview(key, hit.second)
                     else dismissPreview()
@@ -255,7 +254,7 @@ class KeyboardView @JvmOverloads constructor(
                 val fire = event.actionMasked == MotionEvent.ACTION_UP &&
                     wasPress != null && wasPress == downKey && !longPressFired &&
                     wasPress.code != KeyCodes.DELETE && wasPress.code != 0
-                cancelLongPress()
+                cancelKeyLongPress()
                 dismissPreview()
                 pressedKey = null
                 downKey = null
@@ -304,7 +303,7 @@ class KeyboardView @JvmOverloads constructor(
         previewText = null
     }
 
-    private fun cancelLongPress() {
+    private fun cancelKeyLongPress() {
         handler.removeCallbacks(longPressRunnable)
         handler.removeCallbacks(deleteRepeatRunnable)
         longPressFired = false
@@ -312,7 +311,7 @@ class KeyboardView @JvmOverloads constructor(
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
-        cancelLongPress()
+        cancelKeyLongPress()
         dismissPreview()
     }
 }

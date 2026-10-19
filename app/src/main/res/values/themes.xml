@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.TypeX" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/typex_purple</item>
-        <item name="colorPrimaryVariant">@color/typex_deep</item>
-        <item name="colorOnPrimary">@color/typex_text</item>
-        <item name="colorSecondary">@color/typex_orange</item>
+    <style name="Theme.TypeX" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">@color/typex_purple</item>
+        <item name="android:colorPrimaryDark">@color/typex_deep</item>
+        <item name="android:colorAccent">@color/typex_orange</item>
         <item name="android:colorBackground">@color/typex_bg</item>
         <item name="android:textColorPrimary">@color/typex_text</item>
         <item name="android:textColorSecondary">@color/typex_text_secondary</item>

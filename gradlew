@@ -21,7 +21,7 @@ done
 APP_HOME=$(cd "$(dirname "$PRG")" >/dev/null && pwd -P)
 
 # Default JVM options
-DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
+DEFAULT_JVM_OPTS="-Xmx64m -Xms64m"
 
 # Use JAVA_HOME if set, else java on PATH
 if [ -n "$JAVA_HOME" ]; then
