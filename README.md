@@ -37,9 +37,40 @@ GitHub Actions builds a debug APK on every push to `master`
 (`.github/workflows/build-apk.yml`). Pushing a `v*` tag additionally creates a
 GitHub Release with the APK attached.
 
+> NOTE: pushing anything under `.github/workflows/` requires the GitHub App
+> installation to have the **workflow** permission. Until that is granted,
+> the workflow file lives at `.github/workflows/build-apk.yml` in the local
+> checkout (git-ignored) — push it once the permission is granted and CI will
+> go green on the next push.
+
 ```bash
 ./gradlew assembleDebug
 # -> app/build/outputs/apk/debug/app-debug.apk
+```
+
+### Manual build (no Gradle daemon)
+
+The project is pure-framework (zero external dependencies), so it can also be
+built with the raw SDK tools — useful in sandboxed environments where the
+Gradle daemon's localhost socket is blocked:
+
+```bash
+# 1. compile + link resources (generates R.java + base APK)
+aapt2 compile --dir app/src/main/res -o compiled_res.zip
+aapt2 link -o app.ap_ --manifest app/src/main/AndroidManifest.xml \
+  -I $ANDROID_HOME/platforms/android-34/android.jar --java gen \
+  --min-sdk-version 24 --target-sdk-version 34 compiled_res.zip
+# 2. compile R.java + all Kotlin sources
+javac -cp $ANDROID_HOME/platforms/android-34/android.jar -d classes $(find gen -name '*.java')
+kotlinc -jvm-target 17 -no-stdlib \
+  -cp $ANDROID_HOME/platforms/android-34/android.jar:kotlin-stdlib.jar:classes \
+  -d classes $(find app/src/main/java -name '*.kt')
+# 3. dex, package, align, sign
+d8 --lib $ANDROID_HOME/platforms/android-34/android.jar --min-api 24 \
+  --output dex classes kotlin-stdlib.jar
+zip app-unsigned.apk dex/classes.dex   # (add to app.ap_)
+zipalign -f 4 app-unsigned.apk app-aligned.apk
+apksigner sign --ks debug.keystore --out typex-keyboard.apk app-aligned.apk
 ```
 
 ## v2 roadmap (not in v1)
